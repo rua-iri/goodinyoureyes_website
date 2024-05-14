@@ -12,8 +12,8 @@ export default function CastCrew() {
 
     return (
         <div className="w-full h-screen bg-lime-200 bg-cover bg-center">
-            <div>
-                <h1 className="text-xl">
+            <div className="mx-10">
+                <h1 className="text-3xl py-14">
                     Crew
                 </h1>
             </div>
