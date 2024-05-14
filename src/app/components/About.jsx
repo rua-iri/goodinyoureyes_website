@@ -5,7 +5,7 @@ export default function About() {
     
 
     return (
-        <div className="w-full h-full bg-slate-950">
+        <div id="about" className="w-full h-full bg-jo-mountain">
             <div className="text-white md:columns-2 py-16">
                 <div className="flex justify-center items-center">
                     <Image

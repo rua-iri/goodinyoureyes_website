@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        "jo-green": "#7a7f63",
+        "jo-sand": "#aa9475",
+        "jo-sky": "#a8c1d9",
+        "jo-mountain": "#263446",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

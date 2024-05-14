@@ -7,7 +7,8 @@ export default function Contact() {
     const formik = useFormik({
         initialValues: {
             "name": "",
-            "email": ""
+            "email": "",
+            "message": "",
         },
         onSubmit: values => {
             alert(JSON.stringify(values))
@@ -15,7 +16,7 @@ export default function Contact() {
     })
 
     return (
-        <div className="w-full h-screen bg-cyan-100">
+        <div id="contact" className="w-full h-screen bg-jo-sky">
             <div className="mx-10">
                 <h1 className="text-3xl py-14">
                     Contact
@@ -28,8 +29,8 @@ export default function Contact() {
                 </p>
             </div>
 
-            <form onSubmit={formik.handleSubmit}>
-                <div className="m-16 grid md:grid-cols-2 gap-5">
+            <form className="m-10" onSubmit={formik.handleSubmit}>
+                <div className="grid md:grid-cols-2 gap-5 my-8">
                     <div>
                         <label className="input-label" htmlFor="name">
                             Name
@@ -57,10 +58,24 @@ export default function Contact() {
                         />
                     </div>
                 </div>
+                <div className="my-8">
+                    <label className="input-label" htmlFor="email">
+                        Message
+                    </label>
+                    <textarea
+                        className="txt-input"
+                        onChange={formik.handleChange}
+                        value={formik.values.message}
+                        name="message"
+                        id="message"
+                        rows={4}
+                    >
+                    </textarea>
+                </div>
                 <div>
-                    <button 
-                    type="submit"
-                    className="bg-indigo-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-5 py-2 text-white text-center"
+                    <button
+                        type="submit"
+                        className="bg-gray-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-5 py-2 text-white text-center"
                     >
                         Submit
                     </button>

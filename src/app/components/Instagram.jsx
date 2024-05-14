@@ -10,7 +10,7 @@ export default function Instagram() {
     }
 
     return (
-        <div className="w-full h-full bg-amber-100 pb-24">
+        <div id="instagram" className="w-full h-full pb-24 bg-jo-sand">
             <div className="mx-10">
                 <h1 className="text-3xl py-14">
                     Instagram
