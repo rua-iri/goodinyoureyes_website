@@ -3,3 +3,8 @@
 @tailwind utilities;
 
 
+@layer components {
+    .txt-input {
+        /* @apply bg-red-700; */
+    }
+}

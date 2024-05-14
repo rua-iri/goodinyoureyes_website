@@ -2,13 +2,14 @@ import Image from "next/image"
 
 
 export default function About() {
+    
 
     return (
-        <div className="w-full h-full bg-slate-950 bg-cover bg-center">
+        <div className="w-full h-full bg-slate-950">
             <div className="text-white md:columns-2 py-16">
                 <div className="flex justify-center items-center">
                     <Image
-                        className="rounded-xl"
+                        className="inline-block rounded-xl ring-2 ring-white ring-1"
                         src='/img/director_profile.jpeg'
                         width={300}
                         height={300}

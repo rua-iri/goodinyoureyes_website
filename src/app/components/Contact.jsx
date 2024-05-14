@@ -15,6 +15,9 @@ export default function Contact() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla eius ullam expedita quaerat asperiores culpa ut, vitae libero inventore?
                 </p>
             </div>
+            <div className="m-10">
+                <input className="txt-input" type="text" />
+            </div>
         </div>
     )
 }
