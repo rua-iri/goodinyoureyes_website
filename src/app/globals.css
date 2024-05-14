@@ -5,6 +5,9 @@
 
 @layer components {
     .txt-input {
-        /* @apply bg-red-700; */
+        @apply focus:ring-blue-100 focus:border-blue-500 w-full rounded-md p-2 border border-slate-300 bg-slate-50;
+    }
+    .input-label {
+        @apply block mb-2 font-medium text-slate-900;
     }
 }

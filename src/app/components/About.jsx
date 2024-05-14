@@ -9,7 +9,7 @@ export default function About() {
             <div className="text-white md:columns-2 py-16">
                 <div className="flex justify-center items-center">
                     <Image
-                        className="inline-block rounded-xl ring-2 ring-white ring-1"
+                        className="inline-block rounded-xl ring-2 ring-white"
                         src='/img/director_profile.jpeg'
                         width={300}
                         height={300}

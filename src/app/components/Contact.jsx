@@ -1,9 +1,21 @@
+"use client"
+import { useFormik } from "formik"
 
 
 export default function Contact() {
 
+    const formik = useFormik({
+        initialValues: {
+            "name": "",
+            "email": ""
+        },
+        onSubmit: values => {
+            alert(JSON.stringify(values))
+        }
+    })
+
     return (
-        <div className="w-full h-screen bg-cyan-100 bg-cover bg-center">
+        <div className="w-full h-screen bg-cyan-100">
             <div className="mx-10">
                 <h1 className="text-3xl py-14">
                     Contact
@@ -15,9 +27,46 @@ export default function Contact() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla eius ullam expedita quaerat asperiores culpa ut, vitae libero inventore?
                 </p>
             </div>
-            <div className="m-10">
-                <input className="txt-input" type="text" />
-            </div>
+
+            <form onSubmit={formik.handleSubmit}>
+                <div className="m-16 grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label className="input-label" htmlFor="name">
+                            Name
+                        </label>
+                        <input
+                            className="txt-input"
+                            type="name"
+                            name="name"
+                            id="name"
+                            onChange={formik.handleChange}
+                            value={formik.values.name}
+                        />
+                    </div>
+                    <div>
+                        <label className="input-label" htmlFor="email">
+                            Email Address
+                        </label>
+                        <input
+                            className="txt-input"
+                            type="email"
+                            name="email"
+                            id="email"
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <button 
+                    type="submit"
+                    className="bg-indigo-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-5 py-2 text-white text-center"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </form>
+
         </div>
     )
 }
