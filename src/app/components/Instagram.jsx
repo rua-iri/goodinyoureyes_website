@@ -1,7 +1,24 @@
 import Image from "next/image"
 
 
-export default function Instagram() {
+const getMainPost = async (postType) => {
+    // const response = await fetch("/api/instagram?" + new URLSearchParams({
+    //     "postType": postType,
+    // }))
+
+    // const data = response.json()
+
+    const response = await fetch("/api")
+    const data = await response.json()
+
+    console.log(data)
+}
+
+
+export default async function Instagram() {
+
+    const mainPostHref = await getMainPost("main");
+
 
     const instaList = [];
 
@@ -33,7 +50,7 @@ export default function Instagram() {
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cum nesciunt, nam iste at quasi commodi, earum eum corporis voluptatum nobis sed rerum neque doloremque.
                     </div>
                 </a>
-                <div className="my-3 grid grid-cols-2 gap-3">
+                <div className="my-3 grid grid-cols-2 place-items-center gap-3">
                     {
                         instaList.map((crew, index) => (
                             <a href="https://www.instagram.com/goodinyoureyes_thefilm/" target="_blank" key={index}>
@@ -43,7 +60,6 @@ export default function Instagram() {
                                     height={200}
                                     width={200}
                                     alt={`Crew Image ${index + 1}`}
-
                                 />
                             </a>
                         ))
