@@ -1,23 +1,42 @@
+"use client"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 
-const getMainPost = async (postType) => {
-    // const response = await fetch("/api/instagram?" + new URLSearchParams({
-    //     "postType": postType,
-    // }))
+function getInstaPost(postType, setPost) {
 
-    // const data = response.json()
+    fetch(`/api/instagram?postType=${postType}`)
+        .then((response) => { return response.json() })
+        .then((data) => {
+            console.log(data)
 
-    const response = await fetch("/api")
-    const data = await response.json()
+            if (postType == "main") {
+                setPost(data.href)
+            } else if (postType == "main") {
+                setPost(data.href)
+            }
+        })
 
-    console.log(data)
 }
 
 
-export default async function Instagram() {
+export default function Instagram() {
 
-    const mainPostHref = await getMainPost("main");
+    const [mainPostHref, setMainPostHref] = useState("/img/thumb-placeholder.webp");
+    const [randPostsHref, setRandPostsHref] = useState(
+        [
+            "/img/thumb-placeholder.webp",
+            "/img/thumb-placeholder.webp",
+            "/img/thumb-placeholder.webp",
+            "/img/thumb-placeholder.webp"
+        ]
+    );
+
+
+    useEffect(() => {
+        getInstaPost("main", setMainPostHref);
+        getInstaPost("random", setRandPostsHref);
+    }, [])
 
 
     const instaList = [];
@@ -41,7 +60,7 @@ export default async function Instagram() {
                 >
                     <Image
                         className="my-3 inline-block rounded-xl ring-2 ring-white"
-                        src={'/img/instagram1.jpeg'}
+                        src={mainPostHref}
                         width={400}
                         height={400}
                         alt="Instagram Feed Image"
@@ -52,11 +71,11 @@ export default async function Instagram() {
                 </a>
                 <div className="my-3 grid grid-cols-2 place-items-center gap-3">
                     {
-                        instaList.map((crew, index) => (
+                        randPostsHref.map((post, index) => (
                             <a href="https://www.instagram.com/goodinyoureyes_thefilm/" target="_blank" key={index}>
                                 <Image
                                     className="rounded-md"
-                                    src={crew}
+                                    src={post}
                                     height={200}
                                     width={200}
                                     alt={`Crew Image ${index + 1}`}
