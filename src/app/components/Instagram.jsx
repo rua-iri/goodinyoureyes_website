@@ -4,15 +4,16 @@ import { useEffect, useState } from "react"
 import SectionHeader from "./SectionHeader"
 
 
-function getInstaPost(postType, setPost) {
+function getInstaPost(postType, setPost, setCaption) {
 
     fetch(`/api/instagram?postType=${postType}`)
         .then((response) => { return response.json() })
         .then((data) => {
-            console.log(data)
+            // console.log(data)
 
             if (postType == "main") {
                 setPost(data.href)
+                setCaption(data.caption)
             } else if (postType == "random") {
                 setPost(data.href)
             }
@@ -24,6 +25,7 @@ function getInstaPost(postType, setPost) {
 export default function Instagram() {
 
     const [mainPostHref, setMainPostHref] = useState("/img/thumb-placeholder.webp");
+    const [mainPostCaption, setMainPostCaption] = useState("");
     const [randPostsHref, setRandPostsHref] = useState(
         [
             "/img/thumb-placeholder.webp",
@@ -35,8 +37,8 @@ export default function Instagram() {
 
 
     useEffect(() => {
-        getInstaPost("main", setMainPostHref);
-        getInstaPost("random", setRandPostsHref);
+        getInstaPost("main", setMainPostHref, setMainPostCaption);
+        getInstaPost("random", setRandPostsHref, setMainPostCaption);
     }, [])
 
 
@@ -55,7 +57,7 @@ export default function Instagram() {
                     href="https://www.instagram.com/goodinyoureyes_thefilm/"
                     target="_blank"
                 >
-                    <Image
+                    <img
                         className="my-3 inline-block rounded-xl ring-2 ring-white"
                         src={mainPostHref}
                         width={400}
@@ -63,14 +65,14 @@ export default function Instagram() {
                         alt="Instagram Feed Image"
                     />
                     <div>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, cum nesciunt, nam iste at quasi commodi, earum eum corporis voluptatum nobis sed rerum neque doloremque.
+                        {mainPostCaption}
                     </div>
                 </a>
                 <div className="my-3 grid grid-cols-2 place-items-center gap-3">
                     {
                         randPostsHref.map((post, index) => (
                             <a href="https://www.instagram.com/goodinyoureyes_thefilm/" target="_blank" key={index}>
-                                <Image
+                                <img
                                     className="rounded-md"
                                     src={post}
                                     height={200}
