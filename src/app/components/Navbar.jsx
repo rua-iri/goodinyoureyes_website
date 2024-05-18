@@ -5,8 +5,8 @@ export default function Navbar() {
 
     const navbarArray = [
         {
-            "href": "#about",
-            "text": "About"
+            "href": "#director",
+            "text": "Director"
         },
         {
             "href": "#crew",

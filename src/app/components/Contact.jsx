@@ -1,5 +1,6 @@
 "use client"
 import { useFormik } from "formik"
+import SectionHeader from "./SectionHeader";
 
 
 export default function Contact() {
@@ -16,11 +17,9 @@ export default function Contact() {
     })
 
     return (
-        <div id="contact" className="w-full h-screen bg-jo-sky">
+        <div id="contact" className="w-full h-screen bg-cyan-50">
+            <SectionHeader title={"Contact"} />
             <div className="mx-10">
-                <h1 className="text-3xl py-14">
-                    Contact
-                </h1>
                 <p>
                     If you would like to contact...
                 </p>
@@ -72,6 +71,7 @@ export default function Contact() {
                     >
                     </textarea>
                 </div>
+
                 <div>
                     <button
                         type="submit"

@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import SectionHeader from "./SectionHeader"
 
 
 function getInstaPost(postType, setPost) {
@@ -12,7 +13,7 @@ function getInstaPost(postType, setPost) {
 
             if (postType == "main") {
                 setPost(data.href)
-            } else if (postType == "main") {
+            } else if (postType == "random") {
                 setPost(data.href)
             }
         })
@@ -46,13 +47,9 @@ export default function Instagram() {
     }
 
     return (
-        <div id="instagram" className="w-full h-full pb-24 bg-jo-sand">
-            <div className="mx-10">
-                <h1 className="text-3xl py-14">
-                    Instagram
-                </h1>
-            </div>
-            <div className="mx-10 md:columns-2 gap-24">
+        <div id="instagram" className="w-full h-full pb-24 bg-amber-100">
+            <SectionHeader title={"Instagram"} />
+            <div className="mx-10 md:grid md:grid-cols-2 gap-24">
                 <a
                     className=""
                     href="https://www.instagram.com/goodinyoureyes_thefilm/"

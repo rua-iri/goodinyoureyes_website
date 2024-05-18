@@ -10,6 +10,9 @@
     .input-label {
         @apply block mb-2 font-medium text-slate-900;
     }
+    .section-header {
+        /* @apply */
+    }
 }
 
 html {

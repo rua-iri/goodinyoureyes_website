@@ -1,7 +1,12 @@
+"use client"
 import Image from "next/image";
+import SectionHeader from "./SectionHeader";
+import { useState } from "react";
 
 
 export default function CastCrew() {
+
+    const [activeCrew, setActiveCrew] = useState(null);
 
     const crewList = [];
 
@@ -9,18 +14,26 @@ export default function CastCrew() {
         crewList.push(`/img/crew${i}.jpeg`);
     }
 
+    function handleActiveChange(crewName) {
+        if (crewName == activeCrew) {
+            setActiveCrew(null)
+        } else {
+            setActiveCrew(crewName);
+        }
+    }
+
 
     return (
-        <div id="crew" className="w-full h-full pb-24 bg-jo-green">
-            <div className="mx-10">
-                <h1 className="text-3xl py-14">
-                    Crew
-                </h1>
-            </div>
+        <div id="crew" className="w-full h-full pb-24 bg-lime-100">
+            <SectionHeader title={"Crew"} />
             <div className="flex overflow-scroll ms-8 gap-6">
                 {
                     crewList.map((crew, index) => (
-                        <figure className="relative transition-all duration-300 filter grayscale hover:grayscale-0 cursor-pointer" key={index}>
+                        <figure
+                            className="relative transition-all duration-300 filter grayscale hover:grayscale-0 cursor-pointer"
+                            key={index}
+                            onClick={() => handleActiveChange(index)}
+                        >
                             <Image
                                 className="rounded-md max-w-max"
                                 src={crew}
@@ -33,6 +46,13 @@ export default function CastCrew() {
                                 {/* <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloremque recusandae animi accusamus, quod blanditiis praesentium omnis placeat quos molestiae voluptatibus nemo sapiente. Quam ipsam qui neque commodi provident sapiente.
                                 </p> */}
+
+                                {index === activeCrew
+                                    ? <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloremque recusandae animi accusamus, quod blanditiis praesentium omnis placeat quos molestiae voluptatibus nemo sapiente. Quam ipsam qui neque commodi provident sapiente.
+                                    </p>
+                                    : ""}
+
                             </figcaption>
                         </figure>
                     ))
