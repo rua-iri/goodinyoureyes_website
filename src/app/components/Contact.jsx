@@ -1,18 +1,54 @@
 "use client"
 import { useFormik } from "formik"
 import SectionHeader from "./SectionHeader";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { POST } from "../api/contact/route";
 
 
 export default function Contact() {
 
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
+    async function submitForm(values) {
+
+        if (!executeRecaptcha) {
+            alert("Captcha not ready")
+            return
+        }
+
+        const recaptchaToken = await executeRecaptcha("test");
+        values.gRecaptchaToken = recaptchaToken;
+
+        console.log(values)
+
+        const contactResponse = await fetch(
+            "/api/contact",
+            {
+                body: values,
+                method: "POST"
+            }
+        )
+
+        const contactData = await contactResponse.json();
+
+        console.log(contactData)
+
+
+    }
+
+
+
     const formik = useFormik({
         initialValues: {
+            // "name": "asdfaadsf",
+            // "email": "asdf@example.com",
+            // "message": "this is a test message",
             "name": "",
             "email": "",
             "message": "",
         },
         onSubmit: values => {
-            alert(JSON.stringify(values))
+            submitForm(values);
         }
     })
 
@@ -75,7 +111,7 @@ export default function Contact() {
                 <div>
                     <button
                         type="submit"
-                        className="bg-gray-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-6 py-3 text-white text-center"
+                        className="submit-btn"
                     >
                         Submit
                     </button>

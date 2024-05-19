@@ -57,7 +57,7 @@ export default function Instagram() {
                     href="https://www.instagram.com/goodinyoureyes_thefilm/"
                     target="_blank"
                 >
-                    <img
+                    <Image
                         className="my-3 inline-block rounded-xl ring-2 ring-white"
                         src={mainPostHref}
                         width={400}
@@ -68,12 +68,12 @@ export default function Instagram() {
                         {mainPostCaption}
                     </div>
                 </a>
-                <div className="my-3 grid grid-cols-2 place-items-center gap-3">
+                <div className="my-3 md:grid md:grid-cols-2 place-items-center gap-3">
                     {
                         randPostsHref.map((post, index) => (
                             <a href="https://www.instagram.com/goodinyoureyes_thefilm/" target="_blank" key={index}>
-                                <img
-                                    className="rounded-md"
+                                <Image
+                                    className="rounded-md h-200 w-auto"
                                     src={post}
                                     height={200}
                                     width={200}

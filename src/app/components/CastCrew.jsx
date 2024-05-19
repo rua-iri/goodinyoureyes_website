@@ -11,7 +11,7 @@ export default function CastCrew() {
     const crewList = [];
 
     for (let i = 1; i < 10; i++) {
-        crewList.push(`/img/crew${i}.jpeg`);
+        crewList.push({href: `/img/crew${i}.jpeg`, bio: `The bio for crew member number ${i}. Lorem ipsum dolor sit amet.`});
     }
 
     function handleActiveChange(crewName) {
@@ -26,7 +26,7 @@ export default function CastCrew() {
     return (
         <div id="crew" className="w-full h-full pb-24 bg-lime-100">
             <SectionHeader title={"Crew"} />
-            <div className="flex overflow-scroll ms-8 gap-6">
+            <div className="flex overflow-scroll mx-16 gap-6">
                 {
                     crewList.map((crew, index) => (
                         <figure
@@ -36,20 +36,17 @@ export default function CastCrew() {
                         >
                             <Image
                                 className="rounded-md max-w-max"
-                                src={crew}
+                                src={crew.href}
                                 height={300}
                                 width={300}
                                 alt={`Crew Image ${index + 1}`}
                             />
                             <figcaption className="absolute px-4 py-1.5 w-full text-lg bg-slate-800 opacity-80 text-white bottom-0">
                                 Crew {index + 1}
-                                {/* <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloremque recusandae animi accusamus, quod blanditiis praesentium omnis placeat quos molestiae voluptatibus nemo sapiente. Quam ipsam qui neque commodi provident sapiente.
-                                </p> */}
 
                                 {index === activeCrew
                                     ? <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloremque recusandae animi accusamus, quod blanditiis praesentium omnis placeat quos molestiae voluptatibus nemo sapiente. Quam ipsam qui neque commodi provident sapiente.
+                                        {crew.bio}
                                     </p>
                                     : ""}
 

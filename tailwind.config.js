@@ -19,6 +19,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-img": "url('/img/hero_image.webp')",
       },
+      height: {
+        200: "200px"
+      }
     },
   },
   plugins: [],

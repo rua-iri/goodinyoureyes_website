@@ -10,8 +10,8 @@
     .input-label {
         @apply block mb-2 font-medium text-slate-900;
     }
-    .section-header {
-        /* @apply */
+    .submit-btn {
+        @apply bg-gray-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-6 py-3 text-white text-center;
     }
 }
 

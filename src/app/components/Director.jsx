@@ -6,10 +6,10 @@ export default function Director() {
 
     return (
         <div id="director" className="w-full h-full bg-gray-900">
-            <div className="text-white md:columns-2 py-16">
+            <div className="text-white md:grid md:grid-cols-2 py-16">
                 <div className="flex justify-center items-center">
                     <Image
-                        className="inline-block rounded-xl ring-2 ring-white"
+                        className="inline-block rounded-xl ring-2 ring-white w-auto"
                         src='/img/director_profile.jpeg'
                         width={300}
                         height={300}
