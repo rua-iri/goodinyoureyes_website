@@ -53,7 +53,7 @@ export default function Instagram() {
             <SectionHeader title={"Instagram"} />
             <div className="mx-10 md:grid md:grid-cols-2 gap-24">
                 <a
-                    className=""
+                    className="flex-col justify-center items-center"
                     href="https://www.instagram.com/goodinyoureyes_thefilm/"
                     target="_blank"
                 >
@@ -64,7 +64,7 @@ export default function Instagram() {
                         height={400}
                         alt="Instagram Feed Image"
                     />
-                    <div>
+                    <div className="bg-white rounded-md p-3">
                         {mainPostCaption}
                     </div>
                 </a>

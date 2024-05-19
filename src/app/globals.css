@@ -11,7 +11,10 @@
         @apply block mb-2 font-medium text-slate-900;
     }
     .submit-btn {
-        @apply bg-gray-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-6 py-3 text-white text-center;
+        @apply bg-gray-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-400 rounded-lg text-sm px-6 py-4 text-white text-center;
+    }
+    .message-card {
+        @apply py-3 px-5 rounded-md w-auto text-white font-bold;
     }
 }
 
