@@ -28,7 +28,7 @@ export default function CastCrew() {
     return (
         <div id="crew" className="w-full h-full pb-24 bg-lime-100">
             <SectionHeader title={"Crew"} />
-            <div className="flex overflow-scroll md:mx-16 gap-6">
+            <div className="flex overflow-scroll mx-4 md:mx-16 gap-6">
                 {
                     crewList.map((crew, index) => (
                         <figure

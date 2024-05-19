@@ -53,7 +53,7 @@ export default function Instagram() {
             <SectionHeader title={"Instagram"} />
             <div className="mx-10 md:grid md:grid-cols-2 gap-24">
                 <a
-                    className="flex-col justify-center items-center"
+                    className="flex flex-col justify-center items-center"
                     href="https://www.instagram.com/goodinyoureyes_thefilm/"
                     target="_blank"
                 >
@@ -68,7 +68,7 @@ export default function Instagram() {
                         {mainPostCaption}
                     </div>
                 </a>
-                <div className="my-3 md:grid md:grid-cols-2 place-items-center gap-3">
+                <div className="my-3 flex flex-col justify-center items-center md:grid md:grid-cols-2 place-items-center">
                     {
                         randPostsHref.map((post, index) => (
                             <a href="https://www.instagram.com/goodinyoureyes_thefilm/" target="_blank" key={index}>
