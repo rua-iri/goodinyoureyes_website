@@ -61,10 +61,7 @@ export default function Contact() {
             <SectionHeader title={"Contact"} />
             <div className="mx-10">
                 <p>
-                    If you would like to contact...
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla eius ullam expedita quaerat asperiores culpa ut, vitae libero inventore?
+                    If you would like to contact the crew about the film, please fill out the form below and we will get back to you.
                 </p>
             </div>
 

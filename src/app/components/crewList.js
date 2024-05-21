@@ -9,7 +9,7 @@ export const crewList = [
     {
         "name": "Rehan Balaporia",
         "bio": "Director of Photography. I like cheese and ketchup",
-        "imgSrc": "/img/rehanb.jpeg",
+        "imgSrc": "/img/rehanB.jpeg",
         "linkHref": "https://www.instagram.com/rehan.b.camera",
     },
     {
@@ -23,5 +23,11 @@ export const crewList = [
         "bio": "Sound Recordist. Lover of Petra 8",
         "imgSrc": "/img/mattC.jpeg",
         "linkHref": "https://www.instagram.com/mattvcarlson",
+    },
+    {
+        "name": "Romane C. Golan",
+        "bio": "Producer. A day without chocolate is a day wasted",
+        "imgSrc": "/img/romaneG.jpeg",
+        "linkHref": "https://www.instagram.com/romanegolan?igsh=N29kazhvbXd1NTlj&utm_source=qr",
     }
 ]

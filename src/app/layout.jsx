@@ -10,6 +10,9 @@ const tanFont = localFont({ src: './tan-pearl.otf' })
 export const metadata = {
   title: "Good in Your Eyes Film",
   description: "Good in Your Eyes Film Official Website",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 
